@@ -1,0 +1,45 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./css/style.css">
+        <title>Code Quiz</title>
+    </head>
+
+    <body>
+        <section class="quiz-wrapper" id="quiz-wrapper">
+            <h1>Coding Quiz Challenge</h1>
+            <div class="time-wrapper">
+                <h5 class="timer-desc" id="timer-desc">Timer will begin when you press the start button: </h5>
+                <h5 class="timer" id="timer">120</h5>
+            </div>
+            <p id="description">
+                Click the button below to start the timed quiz!
+            </p>
+
+            <section class="hide" id="question-container">
+                <h3 id="question">This question 1</h3>
+                <button class="answer-buttons" id="first-ans">1st answer</button>
+                <button class="answer-buttons" id="second-ans">2nd answer</button>
+                <button class="answer-buttons" id="third-ans">3rd answer</button>
+                <button class="answer-buttons" id="fourth-ans">4th answer</button>
+            </section>
+            <section class="hide" id="question2">
+                <h3 id="question">This is quesiton 2</h3>
+                <button class="answer-buttons" id="first-ans">1st answer</button>
+                <button class="answer-buttons" id="second-ans">2nd answer</button>
+                <button class="answer-buttons" id="third-ans">3rd answer</button>
+                <button class="answer-buttons" id="fourth-ans">4th answer</button>
+            </section>
+            <button class="hide" id="nxt-btn">Next Question ➡️</button>
+            <h3>Score:<span class="score" id="score"></span></h3>
+            <button class="start" id="start" value="start">Start Quiz</button>
+        </section>
+        
+
+
+        <script src="./js/script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+.quiz-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+.time-wrapper {
+    background-color: darksalmon;
+    display: flex;
+    justify-content: space-around;
+    width: 55%;
+    font-size: x-large;
+    font-weight: 900;
+}
+
+.question-container {
+    background-color: aquamarine;
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+}
+
+.question-container h3 {
+    width: 100%;
+    text-align: center;
+}
+
+.question-container button {
+    width: 45%;
+    margin: 5px;
+}
+
+/* Hide content classes */
+
+.hide {
+    display: none;
+}
