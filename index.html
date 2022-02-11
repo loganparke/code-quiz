@@ -19,23 +19,21 @@
                 Click the button below to start the timed quiz!
             </p>
 
-            <section class="hide" id="question-container">
+            <section class="hide question-container" id="question-container">
                 <h3 id="question">This question 1</h3>
-                <button class="answer-buttons" id="first-ans">1st answer</button>
-                <button class="answer-buttons" id="second-ans">2nd answer</button>
-                <button class="answer-buttons" id="third-ans">3rd answer</button>
-                <button class="answer-buttons" id="fourth-ans">4th answer</button>
+                <div class="answer-buttons" id="answer-buttons">
+                    <button class="btn" id="first-ans">1st answer</button>
+                    <button class="btn" id="second-ans">2nd answer</button>
+                    <button class="btn" id="third-ans">3rd answer</button>
+                    <button class="btn" id="fourth-ans">4th answer</button>
+                </div>
             </section>
-            <section class="hide" id="question2">
-                <h3 id="question">This is quesiton 2</h3>
-                <button class="answer-buttons" id="first-ans">1st answer</button>
-                <button class="answer-buttons" id="second-ans">2nd answer</button>
-                <button class="answer-buttons" id="third-ans">3rd answer</button>
-                <button class="answer-buttons" id="fourth-ans">4th answer</button>
-            </section>
-            <button class="hide" id="nxt-btn">Next Question ➡️</button>
-            <h3>Score:<span class="score" id="score"></span></h3>
+
             <button class="start" id="start" value="start">Start Quiz</button>
+            <button class="hide" id="nxt-btn">Next Question ➡️</button>
+            <button class="hide" id="end-quiz">End Quiz</button>
+            <h3>Your Score:<span class="score" id="score"></span></h3>
+            
         </section>
         
 

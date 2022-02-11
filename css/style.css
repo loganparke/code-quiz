@@ -1,25 +1,51 @@
+:root {
+    --neutral-color: lightblue;
+    --correct-color: rgb(148, 224, 148);
+    --wrong-color: rgb(202, 124, 124);
+}
+
+body {
+    background-color: var(--neutral-color);
+    display: flex;
+    justify-content: center;
+}
+.correct {
+    background-color:  var(--correct-color);
+}
+.wrong {
+    background-color: var(--wrong-color);
+}
 .quiz-wrapper {
     display: flex;
+    background-color: antiquewhite;
     flex-direction: column;
-    width: 100%;
+    width: 70%;
     align-items: center;
+    border: 3px solid black;
+    border-radius: 15px;
+    box-shadow: 0 0 10px 2px;
+    margin-top: 10%;
 }
 .time-wrapper {
     background-color: darksalmon;
     display: flex;
     justify-content: space-around;
-    width: 55%;
+    width: 65%;
     font-size: x-large;
     font-weight: 900;
+    border: 3px solid black;
+    padding: 10px;
 }
 
+
 .question-container {
-    background-color: aquamarine;
+    background-color: white;
     margin: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding: 10px;
+    border: 3px solid black;
 }
 
 .question-container h3 {
@@ -27,11 +53,18 @@
     text-align: center;
 }
 
-.question-container button {
-    width: 45%;
-    margin: 5px;
+.answer-buttons{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    margin: 20px 0;
 }
 
+.btn {
+    background-color: var(--neutral-color);
+    width: 100px;
+    text-align: center;
+}
 /* Hide content classes */
 
 .hide {
