@@ -77,6 +77,7 @@ var time = function() {
         else {
             clearInterval(interval);
             alert("your time is up!");
+            endGame();
         }
     }, 1000);
 }
@@ -88,6 +89,7 @@ var setNextQuestion = function() {
 }
 
 function showQuestion(question){
+    asnwerButtons.classList.remove("hide");
     questionElement.innerText = question.question;
     question.answers.forEach(answer => {
         const button = document.createElement("button")
@@ -108,12 +110,12 @@ function timeScoreEditor(correct) {
         seconds = seconds + 5;
         score = score + 5;
         scoreEl.textContent = score;
-        console.log(score);
+        asnwerButtons.classList.add("hide");
     } else {
         seconds = seconds - 10;
         score--;
         scoreEl.textContent = score;
-        console.log("remove score");
+        asnwerButtons.classList.add("hide");
     }
 }
 
@@ -154,7 +156,7 @@ function clearStatusClass(element) {
     element.classList.remove("wrong");
 }
 
-var highScore = [];
+
 //function for saving high score & initials
 var endGame = function() {
     asnwerButtons.classList.add("hide");
@@ -173,8 +175,11 @@ var endGame = function() {
     submitInitials.addEventListener("click", storeScore);
 }
 
+
+var highScore = [];
+
 function storeScore() {
-    scoreEl.textContent = score;  //make screen show your actual score
+    scoreEl.textContent = score; 
     questionContainerEl.classList.add("hide");
     var initials = document.getElementById("initials").value;
     initials = initials.toUpperCase();
@@ -188,28 +193,37 @@ function storeScore() {
 }
 
 //function for pulling saved score & initials
+var savedScore = localStorage.getItem("highScore");
+
 var loadTasks = function() {
-    var savedScore = localStorage.getItem("highScore");
+
     // if there are no tasks, set tasks to an empty array and return out of the function
     if (!savedScore) {
-      return false;
+        return false;
     }
-    var currentHigh = document.createElement("div");
-    currentHigh.textContent = "Current High Score:" ;
-    currentHigh.classList.add("question-container");
-    quizWrapperEl.appendChild(currentHigh);
-
-    var displayScore = document.createElement("div");
-    displayScore.textContent = savedScore;
-    currentHigh.appendChild(displayScore);
     // else, load up saved tasks
-  
     // parse into array of objects
     savedScore = JSON.parse(savedScore);
     // loop through savedTasks array
-  };
+    for (var i = 0; i < savedScore.length - 1; i++) {
+        // pass each task object into the `createTaskEl()` function
+        createSavedScores(savedScore[i]);
+    }
+};
 
-loadTasks()
+var createSavedScores = function() {
+    questionContainerEl.classList.add('hide');
+    var currentHigh = document.createElement("div");
+    currentHigh.textContent = "User & Their Score:" ;
+    currentHigh.classList.add("question-container");
+    quizWrapperEl.appendChild(currentHigh);
+  
+    var displayScore = document.createElement("div");
+    displayScore.textContent = savedScore;
+    currentHigh.appendChild(displayScore);
+}
+
+loadTasks();
 //event listeners
 StartButtonEl.addEventListener("click", start);
 
